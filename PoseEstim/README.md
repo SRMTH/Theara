@@ -6,8 +6,7 @@ Pose estimation is carried out using OpenPose.The pre-trained models provided by
 sudo chmod a+x getModels.sh
 ./getModels.sh
 ```
-To run the code execute these-
+To run the program execute these-
 ```
-python poseestim.py
-
+python posestim.py
 ```
