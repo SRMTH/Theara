@@ -1,11 +1,13 @@
 # Pose-estimation 
 
-Pose estimation is carried out using OpenPose API. The code is a modified version of the API which can be found at - 
-http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel
+Pose estimation is carried out using OpenPose.The pre-trained models provided by "learnopencv.com" can be downloaded by executing the following in command line -
 
 ```
-git clone bleah.git
+sudo chmod a+x getModels.sh
+./getModels.sh
 ```
+To run the code execute these-
 ```
-cd blah
+python poseestim.py
+
 ```
