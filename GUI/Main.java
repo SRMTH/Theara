@@ -1,7 +1,9 @@
 import java.io.*;
 import javax.swing.*;
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 
 class Window
 {
@@ -185,13 +187,20 @@ class Window
 
     void createFace()
     {
-        face = new JLabel();
+        BufferedImage myPicture;
+        try
+        {
+            myPicture = ImageIO.read(new File("/home/akarsh/Ashu backup 2/Desktop/safe_image_thumb.gif"));
+            face = new JLabel(new ImageIcon(myPicture));
+        }
+        catch(IOException e)
+        {
+            face = new JLabel();
+        }
         face.setBounds(337,10,953,510);
-        Font f1 = face.getFont();
-        Font f2 = new Font(f1.getFontName(), f1.getStyle(), f1.getSize()+5);
-        face.setFont(f2);
         face.setOpaque(true);
         face.setBackground(new Color(0,0,0));
+
         f.add(face);
     }
 }
