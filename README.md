@@ -1,5 +1,5 @@
 # T.H.E.A.R.A.
-Maam ko impress karne ke liye
+CLI
 
 # Pose Estimation 
 Readme is located inside the folder
