@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="emotion" name="publisher" type="talk.py" output="screen"/>
+  <node pkg="emotion" name="subscriber" type="listen.py" output="screen"/>
+</launch>
