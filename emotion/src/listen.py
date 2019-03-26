@@ -6,23 +6,27 @@ import time
 from std_msgs.msg import String 
 
 def blush():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/blush.gif') 
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/love.mp4') 
 
     while(cap.isOpened()): 
         ret, frame = cap.read() 
         if ret == True: 
+            frame = cv2.resize(frame,(int(854),int(480)))
             cv2.imshow('Frame', frame) 
-            if cv2.waitKey(100) == ord('q'): 
+            if cv2.waitKey(20) == ord('q'): 
                 break
         else: 
             break
 
+'''if c==0:
+    cv2.imwrite("/home/gunjan/theara_ws/src/emotion/src/ini.png",frame) 
+    print ("saved!!!!!!!!!!!!!!!!!!!!!!!!!!11")
+    c+=1'''
 def angry():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/2.mp4') 
-
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/look_right.mp4') 
     while(cap.isOpened()): 
         ret, frame = cap.read() 
-        if ret == True: 
+        if ret == True:
             cv2.imshow('Frame', frame) 
             if cv2.waitKey(45) == ord('q'): 
                 break
@@ -30,7 +34,7 @@ def angry():
             break
 
 def cry():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/3.mp4') 
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/look_up.mp4') 
 
     while(cap.isOpened()): 
         ret, frame = cap.read() 
@@ -42,7 +46,7 @@ def cry():
             break
 
 def happy():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/4.mp4') 
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/look_left.mp4') 
 
     while(cap.isOpened()): 
         ret, frame = cap.read() 
@@ -54,21 +58,9 @@ def happy():
             break
 
 def judgy():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/judgy.gif') 
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/blink.mp4') 
 
     while(cap.isOpened()): 
-        ret, frame = cap.read() 
-        if ret == True: 
-            cv2.imshow('Frame', frame) 
-            if cv2.waitKey(200) == ord('q'): 
-                break
-        else: 
-            break
-
-def blink():
-    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/5.mp4') 
-
-    while(cap.isOpened()):
         ret, frame = cap.read() 
         if ret == True: 
             cv2.imshow('Frame', frame) 
@@ -77,8 +69,22 @@ def blink():
         else: 
             break
 
+def blink():
+    cap = cv2.VideoCapture('/home/gunjan/theara_ws/src/emotion/src/blink.mp4') 
+
+    while(cap.isOpened()):
+        ret, frame = cap.read() 
+        if ret == True: 
+            print (frame.shape[0],frame.shape[1])
+            cv2.imshow('Frame', frame) 
+            if cv2.waitKey(38) == ord('q'): 
+                break
+        else: 
+            break
+
 def initial():
-    img=cv2.imread('/home/gunjan/theara_ws/src/emotion/src/initial.PNG')
+    img=cv2.imread('/home/gunjan/theara_ws/src/emotion/src/ini.png')
+    #img = cv2.resize(img,(int(854),int(480)))
     cv2.imshow('Frame', img)
     cv2.waitKey(5)
 
